@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="1269.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleurs.Controller">
+   <children>
+      <ImageView fitHeight="762.0" fitWidth="1276.0">
+         <image>
+            <Image url="@../images/Adobe_Post_20200122_210846.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="creer_compte" layoutX="722.0" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#cliquer_nv_compte" prefHeight="42.0" prefWidth="304.0" style="-fx-background-color: #006dff; -fx-background-radius: 90;" text="Créer un compte" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="client_login" layoutX="722.0" layoutY="374.0" mnemonicParsing="false" onMouseClicked="#cliquer_client" prefHeight="42.0" prefWidth="304.0" style="-fx-background-color: #006dff; -fx-background-radius: 90;" text="Portail client" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="admin_login" layoutX="722.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#cliquer_admin" prefHeight="42.0" prefWidth="304.0" style="-fx-background-color: #006DFF; -fx-background-radius: 90;" text="Portail admin" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="203.0" fitWidth="628.0" layoutX="580.0" layoutY="97.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="203.0" fitWidth="459.0" layoutX="744.0" layoutY="73.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/menu_brand.png" />
+         </image>
+      </ImageView>
+      <Hyperlink alignment="CENTER" layoutX="654.0" layoutY="561.0" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: #212121; -fx-background-radius: 5;" text="Contactez nous" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink alignment="CENTER" layoutX="654.0" layoutY="622.0" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: #212121; -fx-background-radius: 5;" text="À propos de nous" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink alignment="CENTER" layoutX="938.0" layoutY="561.0" prefHeight="34.0" prefWidth="190.0" style="-fx-background-color: #212121; -fx-background-radius: 5;" text="Notre page Facebook" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink alignment="CENTER" layoutX="938.0" layoutY="622.0" prefHeight="34.0" prefWidth="190.0" style="-fx-background-color: #212121; -fx-background-radius: 5;" text="Notre page Instagram" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Hyperlink>
+      <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="884.0" layoutY="557.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons/facebook-icons-6941.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="48.0" fitWidth="53.0" layoutX="881.0" layoutY="615.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons/instagram-logo-png-2428.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="592.0" layoutY="551.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons/logo-gmail-9952.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="58.0" fitWidth="54.0" layoutX="589.0" layoutY="612.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/icons/red-i-icon-vector-art-png-clip-art.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

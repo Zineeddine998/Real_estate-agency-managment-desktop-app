@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="menu_client" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleurs.Controller_client">
+   <children>
+      <ImageView fitHeight="576.0" fitWidth="817.0" layoutX="248.0">
+         <image>
+            <Image url="@../images/dialog.jpg" />
+         </image>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="256.0" style="-fx-background-color: #212121;">
+         <children>
+            <ImageView fitHeight="73.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/jimmy-fallon_2.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="50.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label text="Client" textFill="#e7e5e5">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="Liste_des_biens" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@../home/style.css" text="Liste des biens">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Home_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="envoyer_message" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@../home/style.css" text="Envoyer un message" textAlignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Open_Envelope_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Button>
+            <Button id="recherche" fx:id="Rechercher_bien" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@../home/style.css" text="Rechercher un bien" textAlignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Person_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="Quitter" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@../home/style.css" text="Quitter">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8_Sign_Out_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font name="Tahoma" size="13.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="252.0" fitWidth="260.0">
+               <image>
+                  <Image url="@../images/menu%20connexion/banner.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <StackPane layoutX="258.0" prefHeight="576.0" prefWidth="1050.0">
+         <children>
+            <Pane fx:id="Rechercher_bien_panel" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="576.0" fitWidth="817.0">
+                     <image>
+                        <Image url="@../images/dialog.jpg" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="tableau_filtres" layoutX="34.0" layoutY="122.0" prefHeight="376.0" prefWidth="725.0">
+                     <columns>
+                        <TableColumn fx:id="c_type" prefWidth="119.99996948242188" text="Type du bien" />
+                        <TableColumn fx:id="c_transaction" minWidth="0.0" prefWidth="134.4000244140625" text="Type de transaction" />
+                        <TableColumn fx:id="c_wilaya" prefWidth="98.39996337890625" text="Wilaya" />
+                        <TableColumn fx:id="c_superficie" prefWidth="110.4000244140625" text="Superficie (m2)" />
+                        <TableColumn fx:id="c_prix" minWidth="0.0" prefWidth="264.80010986328125" text="Prix (DZD)" />
+                     </columns>
+                  </TableView>
+                  <CheckBox fx:id="check_prix_min" layoutX="18.0" layoutY="27.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" text="Prix min" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="check_prix_max" layoutX="118.0" layoutY="27.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: #212121*;" text="Prix max" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="check_sup_min" layoutX="221.0" layoutY="27.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: #212121*;" text="Sup min" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="check_sup_max" layoutX="313.0" layoutY="27.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: #212121*;" text="Sup max" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="check_wilaya" layoutX="405.0" layoutY="27.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: #212121*;" text="Wilaya" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="check_transaction" layoutX="497.0" layoutY="27.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="139.0" style="-fx-background-color: #212121*;" text="Type de transaction" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="check_type" layoutX="651.0" layoutY="27.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="124.0" style="-fx-background-color: #212121*;" text="Type de bien" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </CheckBox>
+                  <TextField fx:id="prix_min" layoutX="34.0" layoutY="69.0" prefHeight="25.0" prefWidth="92.0" promptText="Prix min" style="-fx-background-color: #212121; -fx-text-fill: #FFFFFF;" />
+                  <TextField fx:id="prix_max" layoutX="138.0" layoutY="69.0" prefHeight="25.0" prefWidth="92.0" promptText="Prix max" style="-fx-background-color: #212121; -fx-text-fill: #FFFFFF;" />
+                  <TextField fx:id="sup_min" layoutX="241.0" layoutY="69.0" prefHeight="25.0" prefWidth="92.0" promptText="Sup min" style="-fx-background-color: #212121; -fx-text-fill: #FFFFFF;" />
+                  <TextField fx:id="sup_max" layoutX="343.0" layoutY="69.0" prefHeight="25.0" prefWidth="92.0" promptText="Sup max" style="-fx-background-color: #212121; -fx-text-fill: #FFFFFF;" />
+                  <MenuButton fx:id="transactionn" layoutX="552.0" layoutY="69.0" mnemonicParsing="false" style="-fx-background-color: #212121;" text="Transaction" textFill="WHITE">
+                     <items>
+                        <MenuItem fx:id="ventee" mnemonicParsing="false" text="Vente" />
+                        <MenuItem fx:id="locationn" mnemonicParsing="false" text="Location" />
+                        <MenuItem fx:id="echangee" mnemonicParsing="false" text="Echange" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton fx:id="typee" layoutX="670.0" layoutY="69.0" mnemonicParsing="false" style="-fx-background-color: #212121;" text="Type" textFill="WHITE">
+                     <items>
+                        <MenuItem fx:id="maisonn" mnemonicParsing="false" text="Maison" />
+                        <MenuItem fx:id="apartementt" mnemonicParsing="false" text="Apartement" />
+                        <MenuItem fx:id="terrainn" mnemonicParsing="false" text="Terrain" />
+                     </items>
+                  </MenuButton>
+                  <MenuButton fx:id="wilayaa" layoutX="441.0" layoutY="69.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #212121;" text="Wilaya" textFill="WHITE">
+                     <items>
+                        <MenuItem fx:id="wilaya11" mnemonicParsing="false" text="Wilaya 1" />
+                        <MenuItem fx:id="wilaya22" mnemonicParsing="false" text="Wilaya 2" />
+                        <MenuItem fx:id="wilaya33" mnemonicParsing="false" text="Wilaya 3" />
+                     </items>
+                  </MenuButton>
+                  <Button fx:id="lancer_rech" layoutX="662.0" layoutY="517.0" mnemonicParsing="false" onAction="#rechercher" prefHeight="25.0" prefWidth="92.0" text="Rechercher" />
+               </children>
+            </Pane>
+            <Pane fx:id="Liste_des_bien_panel" prefHeight="554.0" prefWidth="793.0">
+               <children>
+                  <Pane fx:id="plus_de_details_panel2" prefHeight="576.0" prefWidth="794.0">
+                     <children>
+                        <ImageView fx:id="nego_t" fitHeight="35.0" fitWidth="167.0" layoutX="64.0" layoutY="481.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/nego_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="fixe_t" fitHeight="35.0" fitWidth="167.0" layoutX="64.0" layoutY="481.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/fixe_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="negociable_maison1" fitHeight="35.0" fitWidth="167.0" layoutX="212.0" layoutY="492.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/nego_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="fixe_maison1" fitHeight="35.0" fitWidth="167.0" layoutX="212.0" layoutY="492.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/fixe_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="jardin_dispo_maison1" fitHeight="35.0" fitWidth="167.0" layoutX="138.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/jardin_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="garage_dispo_maison1" fitHeight="35.0" fitWidth="167.0" layoutX="14.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/garage_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="jardin_non_dispo_maison1" fitHeight="35.0" fitWidth="167.0" layoutX="138.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/jardin_non_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="piscine_dispo_maison1" fitHeight="35.0" fitWidth="167.0" layoutX="266.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/piscine_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="piscine_non_dispo_maison1" fitHeight="35.0" fitWidth="167.0" layoutX="266.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/piscine_non_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="meuble_dispo_maison1" fitHeight="35.0" fitWidth="167.0" layoutX="76.0" layoutY="492.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/meuble_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="meuble_non_dispo_maison1" fitHeight="35.0" fitWidth="167.0" layoutX="76.0" layoutY="492.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/meuble_non_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="garage_non_dispo_maison1" fitHeight="35.0" fitWidth="167.0" layoutX="14.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/garage_non_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="576.0" fitWidth="817.0">
+                           <image>
+                              <Image url="@../images/dialog.jpg" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="156.0" layoutY="22.0" prefHeight="435.0" prefWidth="230.0" spacing="5">
+                           <children>
+                              <Label fx:id="type_de_transaction_2" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="adresse_2" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="wilaya_2" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="prop_2" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="prix_2" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="prix_final_2" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="superficie_2" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="nbr_facades" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="statut_juridique" mnemonicParsing="false" prefHeight="41.0" prefWidth="240.0" style="-fx-background-radius: 5; -fx-background-color: #212121" text="Statut juridique" textFill="#ffdd00" underline="true">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="14.0" layoutY="22.0" prefHeight="435.0" prefWidth="124.0" spacing="5">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Type de transaction" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Wilaya" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Adresse" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Proprietaire" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Prix proposé" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Prix final" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Superficie" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Nombre de façades" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Statut juridique" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                        <ImageView fx:id="image_maison1" fitHeight="317.0" fitWidth="355.0" layoutX="420.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="image_terrain" fitHeight="317.0" fitWidth="355.0" layoutX="420.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="plus_de_details_panel1" prefHeight="576.0" prefWidth="794.0">
+                     <children>
+                        <ImageView fx:id="ascenseur_dispo_a" fitHeight="35.0" fitWidth="167.0" layoutX="17.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/ascenseur_dispo_a.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="ascenseur_non_dispo_a" fitHeight="35.0" fitWidth="167.0" layoutX="17.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/ascenseur_non_dispo_a.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="duplexe_dispo_a" fitHeight="35.0" fitWidth="167.0" layoutX="171.0" layoutY="492.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/duplexe.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="simplexe_dispo_a" fitHeight="35.0" fitWidth="167.0" layoutX="171.0" layoutY="492.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/simplexe.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="fixe_a" fitHeight="35.0" fitWidth="167.0" layoutX="171.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/fixe_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="nego_a" fitHeight="35.0" fitWidth="167.0" layoutX="171.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/nego_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="meuble_dispo_a" fitHeight="35.0" fitWidth="167.0" layoutX="17.0" layoutY="492.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/meuble_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="meuble_non_dispo_a" fitHeight="35.0" fitWidth="167.0" layoutX="17.0" layoutY="492.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/meuble_non_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="576.0" fitWidth="817.0">
+                           <image>
+                              <Image url="@../images/dialog.jpg" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="156.0" layoutY="22.0" prefHeight="435.0" prefWidth="230.0" spacing="5">
+                           <children>
+                              <Label fx:id="type_de_transaction_1" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="adresse_1" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="wilaya_1" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="prop_1" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="prix_1" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="prix_final_1" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="superficie_1" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="nbr_etages_1" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="nbr_pieces_1" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="14.0" layoutY="22.0" prefHeight="435.0" prefWidth="124.0" spacing="5">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Type de transaction" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Adresse" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Wilaya" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Proprietaire" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Prix proposé" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Prix final" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Superficie" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Numéro d'étage" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Nombre de pieces" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                        <ImageView fx:id="image_apartement" fitHeight="317.0" fitWidth="355.0" layoutX="420.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="plus_de_details_panel" prefHeight="576.0" prefWidth="794.0">
+                     <children>
+                        <ImageView fx:id="negociable_maison" fitHeight="35.0" fitWidth="167.0" layoutX="212.0" layoutY="492.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/nego_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="fixe_maison" fitHeight="35.0" fitWidth="167.0" layoutX="212.0" layoutY="492.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/fixe_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="jardin_dispo_maison" fitHeight="35.0" fitWidth="167.0" layoutX="138.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/jardin_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="garage_dispo_maison" fitHeight="35.0" fitWidth="167.0" layoutX="14.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/garage_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="jardin_non_dispo_maison" fitHeight="35.0" fitWidth="167.0" layoutX="138.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/jardin_non_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="piscine_dispo_maison" fitHeight="35.0" fitWidth="167.0" layoutX="266.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/piscine_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="piscine_non_dispo_maison" fitHeight="35.0" fitWidth="167.0" layoutX="266.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/piscine_non_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="meuble_dispo_maison" fitHeight="35.0" fitWidth="167.0" layoutX="76.0" layoutY="492.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/meuble_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="meuble_non_dispo_maison" fitHeight="35.0" fitWidth="167.0" layoutX="76.0" layoutY="492.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/meuble_non_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="garage_non_dispo_maison" fitHeight="35.0" fitWidth="167.0" layoutX="14.0" layoutY="457.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/garage_non_dispo_maison.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="576.0" fitWidth="817.0">
+                           <image>
+                              <Image url="@../images/dialog.jpg" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="156.0" layoutY="22.0" prefHeight="435.0" prefWidth="230.0" spacing="5">
+                           <children>
+                              <Label fx:id="type_de_transaction_" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="adresse_" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="wilaya_" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="prop_" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="prix_" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="prix_final_" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="superficie_" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="nbr_etages_" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="nbr_pieces_" alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color:#212121; -fx-background-radius:5;" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="14.0" layoutY="22.0" prefHeight="435.0" prefWidth="124.0" spacing="5">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Type de transaction" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Wilaya" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Adresse" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Proprietaire" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Prix proposé" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Prix final" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Superficie" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Nombre d'étages" textFill="WHITE" />
+                              <Label alignment="CENTER" prefHeight="42.0" prefWidth="230.0" style="-fx-background-color: #006DFF; -fx-background-radius:5;" text="Nombre de pieces" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                        <ImageView fx:id="image_maison" fitHeight="317.0" fitWidth="355.0" layoutX="420.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <ImageView fitHeight="576.0" fitWidth="817.0">
+                     <image>
+                        <Image url="@../images/pexels-photo-417192.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="56.0" layoutY="43.0" prefHeight="35.0" prefWidth="220.0" text="Affichage des biens" textFill="#e7e5e5">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <HBox fx:id="infos_sup" alignment="CENTER" layoutX="45.0" layoutY="115.0" prefHeight="55.0" prefWidth="718.0" spacing="50.0" style="-fx-background-color: #212121; -fx-background-radius: 90;">
+                     <children>
+                        <VBox fx:id="nb_dispo" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="nbr_dispo" text="1500" textFill="#26bfbc">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Biens disponibles" textFill="#e7e5e5" translateY="-5.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tableau_des_biens" layoutX="42.0" layoutY="180.0" prefHeight="340.0" prefWidth="729.0">
+                     <columns>
+                        <TableColumn fx:id="ttype_de_bien" prefWidth="119.99996948242188" text="Type du bien" />
+                        <TableColumn fx:id="ttype_de_transaction" minWidth="0.0" prefWidth="134.4000244140625" text="Type de transaction" />
+                        <TableColumn fx:id="twilaya" prefWidth="98.39996337890625" text="Wilaya" />
+                        <TableColumn fx:id="tdate" prefWidth="110.4000244140625" text="Date" />
+                        <TableColumn fx:id="tprix" minWidth="0.0" prefWidth="264.80010986328125" text="Prix" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="plus_de_details_final" layoutX="673.0" layoutY="529.0" mnemonicParsing="false" onAction="#plus_de_details" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #26bfbc;" text="Plus de details" />
+               </children>
+            </Pane>
+            <Pane fx:id="message_panel" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="576.0" fitWidth="817.0">
+                     <image>
+                        <Image url="@../images/dialog.jpg" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="message" layoutX="50.0" layoutY="171.0" prefHeight="199.0" prefWidth="740.0" promptText="Tapez votre message...." style="-fx-background-color: #212121; -fx-background-radius: 5; -fx-text-fill: #FFFFFF;">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="50.0" layoutY="78.0" text="Envoyer un message" textFill="WHITE">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="envoyer_msg" layoutX="340.0" layoutY="402.0" mnemonicParsing="false" onAction="#envoyer_msg" prefHeight="36.0" prefWidth="161.0" style="-fx-background-color: #212121;" text="Envoyer" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Button>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+   <effect>
+      <DropShadow color="#1b1eeb" />
+   </effect>
+</AnchorPane>
